@@ -1,0 +1,146 @@
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game {
+    width: 600px;
+    height: 300px;
+    position: relative;
+    background-image: url('/images/Fon2.png'), url('/images/Fon2.png');
+    background-size: 600px 300px;
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    border: 2px solid black;
+    overflow: hidden;
+    position: relative;
+    animation: scrollBackground 6s linear infinite;
+}
+
+@keyframes scrollBackground {
+    0% {
+        background-position: 0 0, 600px 0;
+    }
+
+    100% {
+        background-position: -600px 0, 0 0;
+    }
+}
+
+#character {
+    width: 50px;
+    height: 50px;
+    background-image: url('/images/pGen2.png');
+    background-size: cover;
+    position: absolute;
+    top: 150px;
+    left: 50px;
+}
+
+#enemy {
+    width: 50px;
+    height: 50px;
+    background-image: url('/images/aboba12.jpg');
+    position: absolute;
+    top: 150px;
+    left: 600px;
+    display: none;
+}
+
+.bullet {
+    width: 10px;
+    height: 5px;
+    background-color: red;
+    position: absolute;
+}
+
+#block {
+    width: 40px;
+    height: 20px;
+    background-color: purple;
+    position: absolute;
+    top: 180px;
+    left: 600px;
+    display: none;
+}
+
+#blockTop {
+    width: 40px;
+    height: 20px;
+    background-color: green;
+    position: absolute;
+    top: 100px;
+    left: 600px;
+    display: none;
+}
+
+#bonus {
+    width: 30px;
+    height: 30px;
+    background-color: gold;
+    position: absolute;
+    top: 120px;
+    left: 600px;
+    display: none;
+}
+
+@keyframes block {
+    from {
+        left: 600px;
+    }
+
+    to {
+        left: -50px;
+    }
+}
+
+@keyframes blockTop {
+    from {
+        left: 600px;
+    }
+
+    to {
+        left: -50px;
+    }
+}
+
+@keyframes bonusMove {
+    from {
+        left: 600px;
+    }
+
+    to {
+        left: -50px;
+    }
+}
+
+@keyframes enemyMove {
+    from {
+        left: 600px;
+    }
+
+    to {
+        left: -50px;
+    }
+}
+
+@keyframes jump {
+    0% {
+        top: 150px;
+    }
+
+    50% {
+        top: 80px;
+    }
+
+    100% {
+        top: 150px;
+    }
+}
+
+#character.animate {
+    animation: jump 0.8s ease-in-out;
+}
